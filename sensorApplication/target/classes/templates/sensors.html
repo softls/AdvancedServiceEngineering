@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/main">
+<head></head>
+
+<body>
+<th:block layout:fragment="content">
+    <!--/*@thymesVar id="objects" type="java.util.List<at.ac.tuwien.infosys.entities.SensorDescription>"*/-->
+
+    <th:block th:unless="${#arrays.length(objects) == 0}">
+        <div class="panel panel-default">
+            <div class="panel-heading"><th:block th:text="Sensors"/></div>
+
+            <div class="panel-body">
+                <table class="table table-hover nohead">
+                    <tbody>
+                    <tr th:each="object : ${objects}">
+
+                        <td class="vertmiddle col-md-2 text-center">
+                            <span th:if="${!object.turnedOff}" class="label label-success">Active</span>
+                            <span th:if="${object.turnedOff}" class="label label-info">Off</span>
+                        </td>
+
+                        <td class="vertmiddle col-md-5" th:text="${object.sensorName}"></td>
+                        <td class="vertmiddle col-md-3" th:text="${object.sensorType}"></td>
+                        <td class="vertmiddle col-md-2">
+                            <div class="pull-right">
+                                <form th:action="${'sensors' + '/delete'}" method="post">
+                                    <input type="hidden" name="id" th:value="${object.id}"/>
+                                    <div class="btn-group">
+                                        <a th:href="${'sensors' + '/' + object.id}" type="submit"
+                                           class="btn btn-default btn-sm">
+                                            <span class="glyphicon glyphicon-th-list" title="Go to data"></span>
+                                        </a>
+                                        <a th:href="${'sensors' + '/map/' + object.id}" type="submit"
+                                           class="btn btn-default btn-sm">
+                                            <span class="glyphicon glyphicon-road" title="Show on map"></span>
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </th:block>
+
+
+    <div class="emptystate" th:if="${#arrays.length(objects) == 0}">
+        <div class="emptystate-icon glyphicon glyphicon-file"/>
+        <div class="emptystate-text">There are currently no sensors</div>
+    </div>
+</th:block>
+
+
+</body>
+</html>

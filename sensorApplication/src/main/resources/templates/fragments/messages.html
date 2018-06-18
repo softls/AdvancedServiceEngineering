@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <title>Messages Fragment</title>
+</head>
+
+<body>
+<th:block th:fragment="messages">
+    <!--/*@thymesVar id="messagesWarning" type="java.util.List<java.lang.String>"*/-->
+    <!--/*@thymesVar id="messagesSuccess" type="java.util.List<java.lang.String>"*/-->
+
+    <!-- successes -->
+    <th:block th:if="${messagesSuccess != null and messagesSuccess.size() > 0}">
+        <div class="alert alert-success" th:if="${messagesSuccess.size() == 1}" id="messages-success-1">
+            <th:block th:text="${messagesSuccess.get(0)}"/>
+        </div>
+
+        <div class="alert alert-success" th:if="${messagesSuccess.size() &gt; 1}" id="messages-success-n">
+            <ul>
+                <li th:each="message : ${messagesSuccess}" th:text="${message}"></li>
+            </ul>
+        </div>
+    </th:block>
+
+    <!-- warnings -->
+    <th:block th:if="${messagesWarning != null and messagesWarning.size() > 0}">
+        <div class="alert alert-warning" th:if="${messagesWarning.size() == 1}" id="messages-warning-1">
+            <th:block th:text="${messagesWarning.get(0)}"/>
+        </div>
+
+        <div class="alert alert-warning" th:if="${messagesWarning.size() &gt; 1}" id="messages-warning-n">
+            <ul>
+                <li th:each="message : ${messagesWarning}" th:text="${message}"></li>
+            </ul>
+        </div>
+    </th:block>
+</th:block>
+</body>
+</html>

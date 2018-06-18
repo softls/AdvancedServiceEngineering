@@ -1,0 +1,190 @@
+.navbar-brand {
+    display: block;
+    padding-left: 85px;
+    padding-top: 23px;
+    background: url("/images/logo.png") no-repeat 8px 8px;
+    height: 60px;
+    background-size: 70px auto;
+}
+
+.table tbody>tr>td.vertmiddle,
+.table tbody>tr>th.vertmiddle{
+    vertical-align: middle;
+}
+
+.table.cursor tbody tr > td {
+    cursor: pointer;
+}
+
+.table tr {
+width: 100%;
+display: inline-table;
+
+}
+
+tr.selected {
+ background: #ccc;
+}
+
+
+.smaller-table tbody{
+  overflow-y: scroll;
+  display:block;
+  height: 200px;            //  <-- Select the height of the body
+  width: 100%;
+
+}
+div#div__graph.svg-single-view {
+  width:480;
+  height:360;
+  border:1px solid #ccc;
+ }
+div#div__graph__palette.svg-single-view {
+  width:451;
+  height:80;
+  border:1px solid #ccc;
+ }
+svg#graph {
+    width:480;
+    height:360;
+}
+svg#graph__palette {
+    width:451;
+    height:80;
+}
+
+.table thead>tr>th{
+    background-color: #f5f5f5;
+
+}
+
+
+.bordered {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.smaller {
+    font-size: 11px;
+}
+
+.hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ddd; !important;
+}
+
+.content-box {
+    margin-top: 10px;
+}
+
+div#sidebar li.active {
+    background: #eee !important;
+}
+
+div#sidebar li a:hover {
+    background: #ddd;
+}
+
+div.panel table {
+    margin-bottom: 0px;
+}
+
+div.panel-heading .btn {
+    margin-top: -4px;
+    margin-right: -9px;
+}
+
+/* forms */
+    .form-buttons {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+
+    .btn-upload{
+        margin-bottom:1.5em
+    }
+
+
+
+/* empty state */
+    .emptystate {
+        text-align: center;
+    }
+
+    .emptystate-icon,
+    .emptystate-text{
+        margin-top: 40px;
+    }
+
+    .emptystate-icon {
+        font-size: 100px;
+        color: #ddd;
+    }
+
+    .emptystate-text {
+        font-size: 30px;
+    }
+
+    .emptystate > .btn {
+        margin: 20px auto;
+    }
+
+/* remove first line of table has no head */
+    .table.nohead > tbody {
+        border: none;
+    }
+
+    .table.nohead > tbody > tr:first-child {
+        border: none;
+    }
+
+    .table.nohead > tbody > tr:first-child > td,
+    .table.nohead > tbody > tr:first-child > th {
+        border: none;
+    }
+
+/* status symbols */
+
+.status-ok,
+.status-warning {
+    font-size: 28px;
+}
+
+.status-ok {
+    color: green;
+}
+
+.status-warning {
+    color: orange;
+}
+
+.status-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.status-row strong {
+    display: block;
+    margin-top: 5px;
+}
+
+.svg-container {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-bottom: 100%;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+.svg-content {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
